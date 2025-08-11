@@ -1,10 +1,10 @@
 name: Merge to develop workflow
 
 on:
-  push:
+  - push:
     branches:
       - develop
-  workflow_dispatch:
+  - workflow_dispatch:
 
 jobs:
   build:
