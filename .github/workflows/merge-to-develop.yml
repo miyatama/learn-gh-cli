@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: least pull request
-        run: count=`gh pr list --repo miyatama/learn-gh-cli --state open --json "id" | jq '. | length'`; echo "retain pull request: ${count}"
+        run: |
+          count=`gh pr list --repo miyatama/learn-gh-cli --state open --json "id" | jq '. | length'` \
+          echo "retain pull request: ${count}"
